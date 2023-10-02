@@ -5,9 +5,9 @@ public class Student {
 	public String name;
 	public String school;
 	public String clas;
-	public String averageGrade;
+	public Double averageGrade;
 	
-	public Student(String name, String school, String clas, String averageGrade) {
+	public Student(String name, String school, String clas, Double averageGrade) {
 
 		this.name = name;
 		this.school = school;
@@ -39,12 +39,21 @@ public class Student {
 		this.clas = clas;
 	}
 
-	public String getAverageGrade() {
+	public Double getAverageGrade() {
 		return averageGrade;
 	}
 
-	public void setAverageGrade(String averageGrade) {
+	public void setAverageGrade(Double averageGrade) {
 		this.averageGrade = averageGrade;
 	}
+	
+	public void print() {
+		System.out.println("Ime na uchenika: "+this.getName());
+		System.out.println("Uchilishte : "+this.school);
+		System.out.println("Klas : "+this.clas);
+		System.out.println("Sredna ocenka :"+this.averageGrade);
+		System.out.println("--------------------");
+	}
+	
 	
 }
