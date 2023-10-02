@@ -6,13 +6,25 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
+		Student g=null;
+		int broi = Integer.parseInt(sc.nextLine());
 		
-		Student g = new Student (sc.nextLine(),sc.nextLine(), sc.nextLine(), sc.nextLine());
+	/*	for (int i =0;i<broi;i++) {
+			System.out.println(" ");
+		 g = new Student (sc.nextLine(),sc.nextLine(), sc.nextLine(),Double.parseDouble( sc.nextLine()));
 		
-			System.out.println("Ime na uchenika: "+g.getName());
-			System.out.println("Uchilishte : "+g.school);
-			System.out.println("Klas : "+g.clas);
-			System.out.println("Sredna ocenka :"+g.averageGrade);
+			g.print();
+		}
+		*/
+		//ili s maasiv
+		Student [] stud= new Student[broi];
+		for (int i =0;i<broi;i++) {
+			stud[i]=new Student (sc.nextLine(),sc.nextLine(), sc.nextLine(),Double.parseDouble(
+					sc.nextLine()));
+				}
+		for (int i =0;i<broi;i++) {	
+		stud[i].print();
+		}
 	}
-
 }
+
