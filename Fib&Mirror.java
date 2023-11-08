@@ -55,4 +55,11 @@ public class Nachini {
 			System.out.print(" "+i); }
 	}
 	
+	public static void RecMirror(int i,int n) {
+		if (i==n) {System.out.print(i+" ");return;}
+		System.out.print(i+" ");
+		RecMirror(i+1,n);
+		System.out.print(i+" ");
+		
+	}
 }
