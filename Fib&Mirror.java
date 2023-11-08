@@ -62,4 +62,9 @@ public class Nachini {
 		System.out.print(i+" ");
 		
 	}
+	public static int stepen( int  j,int n) {
+		if (n == 0) return 1 ;//purvo zadavme duno 
+		return (j*stepen(j,n-1));
+	} 
+	
 }
