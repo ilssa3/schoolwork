@@ -35,7 +35,7 @@ public class MainStudent {
 			File f = new File (filename);
 			FileWriter fw = new FileWriter(f,save);
 			PrintWriter pw = new PrintWriter (fw);
-			
+			pw.println(text)
 			pw.close();
 			fw.close();
 			
