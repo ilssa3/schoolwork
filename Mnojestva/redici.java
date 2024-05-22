@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class redici {
+public class gnm {
 
 	public static void main(String[] args) {
 		
@@ -43,15 +43,15 @@ System.out.println("  | ");
 //f1 * f2; f1 * f3; f2 * f3; f1 * f2 * f3
 //f1 + f2; f1 + f3; f2 + f3; f1 + f2 + f3
 //+ и * означаваме съответно обединение и сечение 
-System.out.println("  | f1 * f2 = " + union(f1,f2));
-System.out.println("  | f1 * f3 = " + union(f2,f3));
-System.out.println("  | f2 * f3 = " + union(f3,f2));
-System.out.println("  | f1 * f2 * f3 = " + union(f1,union(f2,f3)));
+System.out.println("  | f1 + f2 = " + union(f1,f2));
+System.out.println("  | f1 + f3 = " + union(f2,f3));
+System.out.println("  | f2 + f3 = " + union(f3,f2));
+System.out.println("  | f1 + f2 + f3 = " + union(f1,union(f2,f3)));
 System.out.println("  | ");
-System.out.println("  | f1 + f2 = " + intersect(f1,f2));
+System.out.println("  | f1 * f2 = " + intersect(f1,f2));
 System.out.println("  | f1 * f3 = " + intersect(f1,f3));
-System.out.println("  | f2 + f3 = " + intersect(f3,f2));
-System.out.println("  | f1 + f2 + f3 = " + intersect(f1,intersect(f2,f3)));
+System.out.println("  | f2 * f3 = " + intersect(f3,f2));
+System.out.println("  | f1 * f2 * f3 = " + intersect(f1,intersect(f2,f3)));
 
 
 	}
@@ -61,6 +61,7 @@ System.out.println("  | f1 + f2 + f3 = " + intersect(f1,intersect(f2,f3)));
 		intersect.retainAll(set2);
 		return intersect;	
 	}
+
 
 	public static <String> Set<String> union (Set<String> set1, Set<String> set2) {
 		Set <String> uni = new HashSet<String>();
