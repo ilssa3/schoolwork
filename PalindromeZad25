@@ -1,0 +1,46 @@
+package zad;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class PalindromeZad25 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Enter a number between 1 & 10000000");
+	
+		Integer n = sc.nextInt() ;
+		boolean whatif = true;
+			
+		if (n instanceof Integer) {
+			whatif = true;}
+		
+		if (whatif == true) {
+		if (n <= 10000000 &&n >= 1) {
+			//454
+			int num = 0;
+			int sum = 0 ;
+			int buf = n;
+			
+			  while(n>0){    
+				  num = n%10; //num1 = 4 , num2 = 5 ,  num3, = 4
+				   sum =(sum*10)+num; //sum1 = 4   , sum2 = 4*10+5 , sum3 = 45*10 +4
+				   n=n/10;    //n1 = 45 , n2  = 4, n4 = 0 => ends the while
+				  } 
+			  
+				System.out.println("Is it palindrome? ");
+			  if(buf==sum)    
+				   System.out.println(buf + " is a palindrome!");    
+				  else    
+				   System.out.println(buf + " is not palindrome!");    
+				}  
+		else System.out.println("Incorrectly entered number! ");}
+		
+		else System.out.println("Incorrectly entered number! ");
+	}
+	
+		
+		}
+
