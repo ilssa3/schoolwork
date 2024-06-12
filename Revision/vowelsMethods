@@ -1,0 +1,80 @@
+package nqmNqm;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class VowelChecker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+    	
+        ArrayList<String> words = new ArrayList<>();
+        words.add("education");
+        words.add("automobile");
+        words.add("koti");
+        words.add("dialogue");
+        words.add("permutation");
+        words.add("uncomplicated");
+        words.add("aeronautic");
+        words.add("behaviour");
+        words.add("configurable");
+        words.add("sequoia");
+        words.add("supplementation");
+        words.add("telecommunication");
+        
+
+        ArrayList<String> wordsWithAllVowels = allVowels(words);
+        System.out.println("Думи, съдържащи всички гласни букви : ");
+        System.out.println(wordsWithAllVowels);
+        System.out.println();
+        System.out.println("Думи с определен брой букви /въведете брой/ : ");
+    	int n = sc.nextInt();
+        wordsWithNLetters(words,n);
+        System.out.println();
+        System.out.println("Думи, които съдържат определен низ /въведете низ/ : ");
+        String s = sc.next();        
+        partOf(words,s);
+    
+    }
+    
+    /*/ a) allVocals (за Java), който приема като параметър списък от думи 
+     * (използвайте подходящ тип данни). Методът връща списък от онези думи, 
+     * които съдържат всички гласни букви (за гласни букви се приемат {a, e, i, o, u}). 
+     */
+    public static ArrayList<String> allVowels(ArrayList<String> words) {
+        ArrayList<String> wAllVowels = new ArrayList<>();
+       //  vowels = aeiou
+
+        for (String word : words) {
+            if (word.contains("a")&&word.contains("e")&&word.contains("i")&&word.contains("o")&&word.contains("u")) {
+               wAllVowels .add(word);
+            }
+        }   
+        return wAllVowels;
+    }
+
+    /* б) wordsWithNLetters (за Java), който приема два параметъра
+     *  - списък от думи, и цяло число n (използвайте подходящи типове данни).
+     *   Методът връща списък от всички n-буквени думи. 
+     */
+    
+    public static void wordsWithNLetters (ArrayList<String> words , int n) {
+    	ArrayList<String> nLengthWords = new ArrayList<>();
+    	
+    	for (String word : words) {
+    		if (word.length() == n)nLengthWords.add(word);
+    	}
+    	System.out.println(nLengthWords);
+    }
+     /*
+      *  в) partOf (за Java), който приема два параметъра - списък от думи
+      *   и дума (използвайте подходящи типове данни). Методът връща списък
+      *    от всички думи в списъка, които съдържат дадената дума. 
+      */
+    public static void partOf (ArrayList<String> words , String word) {
+    	ArrayList<String> wordsContainingWord = new ArrayList<>();
+    	
+    	for (String rai : words) {
+    		if(rai.contains(word))wordsContainingWord.add(rai);
+    	}
+    	System.out.println(wordsContainingWord);
+    }
+}
